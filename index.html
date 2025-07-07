@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/professional-portfolio.png" type="image/x-icon">
   <title>Meu Portfólio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,28 +56,146 @@
     <p class="max-w-xl text-lg">💻👱️Ambição de ser Programador FullStack🔥❤️‍🔥</p>
   </section>
 
-  <!-- Habilidades -->
-  <section id="habilidades" class="p-8 bg-gray-100 dark:bg-gray-800">
-    <h2 class="text-3xl font-bold mb-6 text-center">Habilidades</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div class="projeto hover:scale-110 transition transform">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-12 mx-auto">
-        <p>HTML</p>
-      </div>
-      <div class="projeto hover:scale-110 transition transform">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-12 mx-auto">
-        <p>CSS/Tailwind</p>
-      </div>
-      <div class="projeto hover:scale-110 transition transform">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-12 mx-auto">
-        <p>JavaScript</p>
-      </div>
-      <div class="projeto hover:scale-110 transition transform">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-12 mx-auto">
-        <p>Python</p>
-      </div>
+<section id="habilidades" class="p-8 bg-gray-100 dark:bg-gray-800">
+  <h2 class="text-3xl font-bold mb-6 text-center">Habilidades</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div data-skill="html" class="skill-card hover:scale-110 transition transform cursor-pointer p-4 rounded bg-white dark:bg-gray-700 shadow">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-12 mx-auto mb-2" alt="HTML">
+      <p>HTML</p>
     </div>
-  </section>
+    <div data-skill="css" class="skill-card hover:scale-110 transition transform cursor-pointer p-4 rounded bg-white dark:bg-gray-700 shadow">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-12 mx-auto mb-2" alt="CSS/Tailwind">
+      <p>CSS/Tailwind</p>
+    </div>
+    <div data-skill="js" class="skill-card hover:scale-110 transition transform cursor-pointer p-4 rounded bg-white dark:bg-gray-700 shadow">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-12 mx-auto mb-2" alt="JavaScript">
+      <p>JavaScript</p>
+    </div>
+    <div data-skill="python" class="skill-card hover:scale-110 transition transform cursor-pointer p-4 rounded bg-white dark:bg-gray-700 shadow">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-12 mx-auto mb-2" alt="Python">
+      <p>Python</p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="skillModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+  <div class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-lg mx-4 relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-2xl font-bold">&times;</button>
+    <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
+    <p id="modalDescription" class="mb-4 text-gray-700 dark:text-gray-300"></p>
+    <ul id="modalProjects" class="list-disc list-inside mb-4 text-blue-600 dark:text-blue-400"></ul>
+    <h4 class="font-semibold mb-2">Links Úteis:</h4>
+    <ul id="modalLinks" class="list-disc list-inside text-blue-600 dark:text-blue-400"></ul>
+  </div>
+</div>
+
+<script>
+  const skillsData = {
+  html: {
+    title: 'HTML',
+    description: `HTML é a linguagem fundamental para estruturar o conteúdo das páginas web. Utilizo HTML semântico para garantir que a estrutura da página seja compreensível tanto para usuários quanto para motores de busca, aumentando a acessibilidade e melhorando o SEO. 
+
+Além disso, conheço boas práticas para organizar conteúdos, como o uso correto de headings, listas, tabelas e formulários, o que contribui para a criação de sites mais robustos e fáceis de manter.`,
+    projects: [],
+    links: [
+      { text: 'MDN HTML', url: 'https://developer.mozilla.org/pt-BR/docs/Web/HTML' },
+      { text: 'Curso HTML5', url: 'https://infinityschool.eadplataforma.app' }
+    ]
+  },
+  css: {
+    title: 'CSS / Tailwind CSS',
+    description: `CSS é a linguagem responsável pelo estilo visual das páginas, definindo cores, layouts, tipografia e responsividade. Tenho experiência com CSS tradicional, além de utilizar o Tailwind CSS para agilizar o desenvolvimento com utilitários prontos e altamente configuráveis.
+
+O Tailwind permite criar interfaces modernas e responsivas de forma rápida e consistente, facilitando a manutenção e garantindo que o design se adapte bem a diferentes dispositivos e resoluções.`,
+    projects: [],
+    links: [
+      { text: 'Documentação Tailwind CSS', url: 'https://tailwindcss.com/docs' },
+      { text: 'Curso CSS Avançado', url: 'https://infinityschool.eadplataforma.app' }
+    ]
+  },
+  js: {
+    title: 'JavaScript',
+    description: `JavaScript é a linguagem principal para adicionar interatividade e dinamismo nas páginas web. Uso recursos modernos do ES6+ para criar código limpo e eficiente, além de manipular DOM, fazer requisições a APIs e implementar funcionalidades avançadas.
+
+Também tenho conhecimento básico em frameworks e bibliotecas que complementam o desenvolvimento front-end, permitindo construir aplicações mais complexas e responsivas.`,
+    projects: [],
+    links: [
+      { text: 'JavaScript Guide (MDN)', url: 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide' },
+      { text: 'Curso JavaScript Moderno', url: 'https://infinityschool.eadplataforma.app' }
+    ]
+  },
+  python: {
+    title: 'Python',
+    description: `Python é uma linguagem versátil que uso para automação de tarefas repetitivas, scripts de manutenção e análise de dados básica. A sintaxe clara e a vasta biblioteca padrão tornam o Python uma ótima escolha para resolver problemas de forma rápida e elegante.
+
+Tenho experiência em criar pequenos programas para processar dados, integrar sistemas e automatizar fluxos de trabalho, o que agrega eficiência ao dia a dia do desenvolvimento.`,
+    projects: [],
+    links: [
+      { text: 'Python Oficial', url: 'https://www.python.org/' },
+      { text: 'Curso Python Básico', url: 'https://infinityschool.eadplataforma.app' }
+    ]
+  }
+};
+
+
+  const modal = document.getElementById('skillModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalProjects = document.getElementById('modalProjects');
+  const modalLinks = document.getElementById('modalLinks');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  document.querySelectorAll('.skill-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const skill = card.getAttribute('data-skill');
+      const data = skillsData[skill];
+
+      if (!data) return;
+
+      modalTitle.textContent = data.title;
+      modalDescription.textContent = data.description;
+
+      // Limpar listas
+      modalProjects.innerHTML = '';
+      modalLinks.innerHTML = '';
+
+      // Preencher projetos
+      data.projects.forEach(proj => {
+        const li = document.createElement('li');
+        li.textContent = proj;
+        modalProjects.appendChild(li);
+      });
+
+      // Preencher links
+      data.links.forEach(link => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.textContent = link.text;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.classList.add('hover:underline');
+        li.appendChild(a);
+        modalLinks.appendChild(li);
+      });
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+    });
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('opacity-0', 'pointer-events-none');
+  });
+
+  // Fecha o modal clicando fora do conteúdo
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
+</script>
+
 
   <!-- Projetos -->
   <section id="projetos" class="p-8">
