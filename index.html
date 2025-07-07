@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Portfólio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- Botão Dark Mode -->
+  <button id="themeToggle" class="fixed top-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg transition transform hover:scale-110 z-50">
+    🌙
+  </button>
+
+  <!-- Introdução -->
+  <section class="min-h-screen flex flex-col items-center justify-center p-8 text-center">
+    <img src="assets/image.png" alt="Foto de perfil" class="rounded-full w-40 h-40 mb-4 shadow-lg hover:scale-125 transition transform">
+    <h1 class="text-4xl font-bold mb-2">Arthur Cesar</h1>
+    <p class="max-w-xl text-lg">Desenvolvedor Front-end apaixonado por criar interfaces incríveis com HTML, Tailwind CSS e JavaScript.</p>
+    <p class="max-w-xl text-lg">💻🖱️Ambição de ser Programador FullStack🔥❤️‍🔥</p>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="p-8 bg-gray-100 dark:bg-gray-800">
+    <h2 class="text-3xl font-bold mb-6 text-center">Habilidades</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="hover:scale-110 transition transform">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-12 mx-auto">
+        <p>HTML</p>
+      </div>
+      <div class="hover:scale-110 transition transform">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-12 mx-auto">
+        <p>CSS/Tailwind</p>
+      </div>
+      <div class="hover:scale-110 transition transform">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-12 mx-auto">
+        <p>JavaScript</p>
+      </div>
+      <div class="hover:scale-110 transition transform">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-12 mx-auto">
+        <p>Python</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="p-8">
+    <h2 class="text-3xl font-bold mb-6 text-center">Projetos</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">Projeto 1 - Jogo da Memória</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Jogo da memória baseado na API do Valorant</p>
+        <a href="https://github.com/AarthurCesar/Game_Valorant.git" class="text-blue-500 hover:underline">Ver mais</a>
+      </div>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">Projeto 2 - Projeto Comida & Imagens</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Projeto para automatizar o processo de imagem relacionado</p>
+        <a href="https://github.com/AarthurCesar/Comida_Imagens.git" class="text-blue-500 hover:underline">Ver mais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiências -->
+  <section id="experiencia" class="p-8 bg-gray-100 dark:bg-gray-800">
+    <h2 class="text-3xl font-bold mb-6 text-center">Experiência</h2>
+    <div class="space-y-4">
+      <div class="border-l-4 border-blue-500 pl-4">
+        <h3 class="text-xl font-semibold">Uso Pessoal</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Desenvolvedor Front-end </p>
+        <p class="mt-2">Atuação em projetos, sistema de cadastro de cliente e produtos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="p-8">
+    <h2 class="text-3xl font-bold mb-6 text-center">Contato</h2>
+<form id="myForm" action="https://formspree.io/f/mdkzrkwl" method="POST" class="max-w-xl mx-auto space-y-4">
+  <input type="text" name="name" placeholder="Seu nome" required class="w-full p-3 border rounded bg-white dark:bg-gray-900 dark:border-gray-700">
+  <input type="email" name="email" placeholder="Seu e-mail" required class="w-full p-3 border rounded bg-white dark:bg-gray-900 dark:border-gray-700">
+  <textarea name="message" placeholder="Sua mensagem" rows="5" required class="w-full p-3 border rounded bg-white dark:bg-gray-900 dark:border-gray-700"></textarea>
+  <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all">Enviar</button>
+</form>
+
+
+    <div class="mt-6 text-center space-x-4">
+      <a href="https://www.linkedin.com/in/arthur-cesar-95a443299/" class="text-blue-500 hover:underline">LinkedIn</a>
+      <a href="https://github.com/AarthurCesar" class="text-blue-500 hover:underline">GitHub</a>
+    </div>
+  </section>
+
+  <!-- Animação ao rolar -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('opacity-0', 'translate-y-8', 'transition', 'duration-700');
+      observer.observe(section);
+    });
+  </script>
+
+  <!-- Script Dark Mode -->
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+
+    // Verificar tema salvo no localStorage ou preferência do sistema
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+
+    // Atualiza o ícone ao carregar a página
+    updateIcon();
+
+    toggleButton.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      
+      // Salvar tema no localStorage
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      
+      updateIcon();
+    });
+
+    function updateIcon() {
+      if (document.documentElement.classList.contains('dark')) {
+        toggleButton.textContent = '☀️';
+        toggleButton.classList.remove('bg-gray-800');
+        toggleButton.classList.add('bg-yellow-400', 'text-gray-900');
+      } else {
+        toggleButton.textContent = '🌙';
+        toggleButton.classList.remove('bg-yellow-400', 'text-gray-900');
+        toggleButton.classList.add('bg-gray-800', 'text-white');
+      }
+    }
+     document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede o envio padrão
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        window.location.href = 'obrigado.html'; // Redireciona manualmente
+      } else {
+        alert('Falha ao enviar, tente novamente.');
+      }
+    })
+    .catch(error => {
+      alert('Erro ao enviar: ' + error);
+    });
+  });
+  </script>
+
+</body>
+</html>
