@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="assets/aviao-de-papel.png" type="image/x-icon">
   <title>Obrigado!</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(
+        135deg,
+        #500202,     
+        #264DE4        
+      );
+      background-size: cover;
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-blue-600 to-purple-700 flex items-center justify-center min-h-screen text-white font-sans">
+<body class="flex items-center justify-center min-h-screen text-white font-sans">
 
-  <div id="container" class="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl max-w-xl mx-auto scale-0">
-    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_xlkxtmul.json" background="transparent" speed="1" style="width: 300px; height: 300px;" autoplay></lottie-player>
+  <div id="container" class="text-center p-8 bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl max-w-xl mx-auto scale-0">
+    <lottie-player 
+      src="https://assets6.lottiefiles.com/packages/lf20_xlkxtmul.json" 
+      background="transparent" 
+      speed="1" 
+      style="width: 300px; height: 300px; margin: 0 auto;" 
+      autoplay>
+    </lottie-player>
 
-    <h1 class="text-4xl font-bold mb-4">Mensagem Enviada com Sucesso!</h1>
-    <p class="text-lg mb-6">Obrigado por entrar em contato, retornarei em breve 🚀.</p>
+    <h1 class="text-4xl font-bold mb-4 drop-shadow-lg">Mensagem Enviada com Sucesso!</h1>
+    <p class="text-lg mb-6 drop-shadow-md">Obrigado por entrar em contato, retornarei em breve 🚀.</p>
 
-    <a href="index.html" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition-all">
-      Voltar ao Início
-    </a>
+    <div class="mt-6">
+      <a href="index.html" 
+         class="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded-full shadow-lg 
+                hover:bg-gray-200 hover:scale-105 transition-all focus:outline-none 
+                focus:ring-4 focus:ring-blue-300">
+        Voltar ao Início
+      </a>
+    </div>
   </div>
 
   <script>
-    // Animação de entrada usando GSAP
     window.onload = () => {
       gsap.to("#container", { scale: 1, duration: 1, ease: "bounce.out" });
     };
